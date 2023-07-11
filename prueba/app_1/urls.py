@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 from .views import VistaLoginCustom
 from django.contrib.auth.views import LogoutView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
    path('', views.home, name='home'),
@@ -14,3 +16,5 @@ urlpatterns = [
    path('perfil_usuario/', views.perfil_usuario, name='perfil'),
    path('exito', views.exito, name='exito'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -57,6 +57,7 @@ class VistaLoginCustom(LoginView):
         return reverse_lazy('perfil') # Lugar al que se es redirecionado si el login es exitoso
 
 
+
     
 
     
