@@ -4,6 +4,7 @@ from django.conf import settings
 from .forms import FormularioContacto
 from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
+from .models import Producto
 
 # Create your views here.
 
@@ -16,8 +17,10 @@ def nosotros(request):
 def tienda(request):
     return render(request, 'tienda.html')
 
-def producto(request):
-    return render(request, 'producto.html')
+def producto(request, idProducto):
+    produc=Producto.objects.get(idProducto=idProducto)
+    return render(request,"producto.html", {"producto":produc})
+
 
 def contacto(request):
     

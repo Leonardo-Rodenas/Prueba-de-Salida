@@ -14,7 +14,7 @@
                  <!-- Inicio Imagen izquierda del Producto -->
                 <div class="col-lg-5 mt-5">
                     <div class="card mb-3">
-                        <img class="card-img img-fluid" src="{% static 'assets/img/juego1.jpg' %}" alt="Card image cap" id="product-detail">
+                        <img class="card-img img-fluid" src="{{producto.imagProducto.url}}" alt="Card image cap" id="product-detail">
                     </div>
                 </div>
                  <!-- Fin Imagen izquierda del Producto -->
@@ -23,8 +23,8 @@
                 <div class="col-lg-7 mt-5">
                     <div class="card">
                         <div class="card-body">
-                            <h1 class="h2 text-center">God of War - Ragnarok (PS5)</h1>
-                            <p class="h3 text-center py-2">$ 70.000</p>
+                            <h1 class="h2 text-center">{{ producto.nombre|title }}</h1>
+                            <p class="h3 text-center py-2">$ {{ producto.precioProducto }}</p>
                             <div class="text-center">
                                 <p class="py-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="yellow"
@@ -55,7 +55,7 @@
                                 </p>
                             </div>
                             <h6>Descripción:</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.</p>
+                            <p>{{ producto.descripcionProducto }}</p>
                             <form action="" method="GET">
                                 {% csrf_token%}
                                 <input type="hidden" name="product-title" value="Activewear">

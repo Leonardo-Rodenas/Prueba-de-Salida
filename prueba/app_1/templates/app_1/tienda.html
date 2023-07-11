@@ -53,7 +53,7 @@
             <div class="row">
                 {% for producto in productos %}
                 <div class="col-md-4">
-                    <a href="{% url 'producto' %}">
+                    <a href="{% url 'producto' producto.idProducto %}">
                         <div class="card mb-4 product-wap rounded-5">
                             <div class="card border-bottom-5 rounded-3">
                                 <img class="card-img border rounded-3 img-fluid" src="{{producto.imagProducto.url}}">

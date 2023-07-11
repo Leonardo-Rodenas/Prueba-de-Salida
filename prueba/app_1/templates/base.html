@@ -85,10 +85,11 @@ background: linear-gradient(90deg, rgba(193,191,191,1) 52%, rgba(255,255,255,1) 
     <!-- Inicio Encabebezado Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light shadow ">
         <div class="container d-flex align-items-center">
-            <a class="navbar-brand text-success" href="{% url 'home'%}">
+            <a class="navbar-brand text-white" href="{% url 'home'%}">
                 <img style="width: 30px; height: 30px;" class="me-2 image-fluid"
                     src="{% static 'assets/img/logo.png' %}" alt="logo-navbar">
-                <b style="font-family: 'Caprasimo', cursive;">TE LO ENVÍO</b>
+                <b style="font-size: large; font-family: 'Caprasimo', cursive;">TE LO <span
+                        class="text-success">ENVÍO</span></b>
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                 data-bs-target="#templatemo_main_nav" aria-controls="templatemo_main_nav" aria-expanded="false"
@@ -171,8 +172,10 @@ background: linear-gradient(90deg, rgba(193,191,191,1) 52%, rgba(255,255,255,1) 
             <div class="container text-center text-md-start ">
                 <div class="row mt-3 ">
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto text-center">
-                        <img style="width: 70%; height: auto;" src="{% static 'assets/img/logo.png' %}"
+                        <img style="width: 60%; height: auto;" src="{% static 'assets/img/logo.png' %}"
                             alt="logo_footer" class="mb-3" style="width: auto; height: 50px;">
+                        <p class="h2" style="font-family: 'Caprasimo', cursive;">TE LO <span
+                                class="text-success">ENVÍO</span></p>
                     </div>
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto text-white text-center">
 
