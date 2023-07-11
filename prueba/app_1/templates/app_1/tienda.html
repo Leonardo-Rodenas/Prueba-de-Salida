@@ -16,23 +16,15 @@
             <ul class="list-unstyled templatemo-accordion">
                 <li class="pb-3">
                     <a class="d-flex justify-content-between h4 text-decoration-none" href="#">
-                        Videojuegos</a>
+                        Deporte</a>
                 </li>
                 <li class="pb-3">
                     <a class="d-flex justify-content-between h4 text-decoration-none" href="#">
-                        Juegos de Mesa</a>
-                </li>
-                <li class="pb-3">
-                    <a class="d-flex justify-content-between h4 text-decoration-none" href="#">
-                        Juguetes</a>
+                        Electronica</a>
                 </li>
                 <li class="pb-3">
                     <a class="d-flex justify-content-between h4 text-decoration-none" href="#">
                         Ofertas</a>
-                </li>
-                <li class="pb-3">
-                    <a class="d-flex justify-content-between h4 text-decoration-none" href="#">
-                        Productos</a>
                 </li>
             </ul>
         </div>
@@ -42,7 +34,6 @@
             <!-- Inicio Encabezado Productos -->
             <div class="row">
                 <div class="col-md-6">
-               "Lorem Ipsum is simply dummy text" 
                 </div>
                 <div class="col-md-6 pb-4">
                     <div class="d-flex">
@@ -60,20 +51,22 @@
             
             <!-- Inicio Cuadros de Productos -->
             <div class="row">
+                {% for producto in productos %}
                 <div class="col-md-4">
                     <a href="{% url 'producto' %}">
                         <div class="card mb-4 product-wap rounded-5">
                             <div class="card border-bottom-5 rounded-3">
-                                <img class="card-img border rounded-3 img-fluid" src="{% static 'assets/img/juego1.jpg' %}">
+                                <img class="card-img border rounded-3 img-fluid" src="{{producto.imagProducto.url}}">
                             </div>
                             <div class="card-body text-center">
-                                <a href="#" class="h3 text-decoration-none text-center">Nombre del Juego</a>
-                                <a href="#" class="h3 text-decoration-none text-center">Plataforma</a>
-                                <h3 class="text-center my-3"> $ 70.000</h3>
+                                <a href="#" class="fs-4 text-decoration-none text-center">{{ producto.nombre|title|truncatechars:40 }}</a>
+                                <p><a href="#" class="fs-6 text-decoration-none text-center">{{ producto.descripcionProducto|truncatechars:50 }}</a></p>
+                                <h3 class="text-center my-3"> $ {{ producto.precioProducto }}</h3>
                             </div>
                         </div>
                     </a>
                 </div>
+                {% endfor %}
             </div>
             <!-- Fin Cuadros de Productos -->
         </div>
