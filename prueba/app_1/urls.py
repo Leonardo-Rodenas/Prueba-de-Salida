@@ -4,7 +4,7 @@ from .views import VistaLoginCustom
 from django.contrib.auth.views import LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
-from app_1.views import PedidoView
+from app_1.views import PedidoView, PedidoEliminarView
 
 urlpatterns = [
    path('', views.home, name='home'),
@@ -17,6 +17,7 @@ urlpatterns = [
    path('perfil_usuario/', views.perfil_usuario, name='perfil'),
    path('exito', views.exito, name='exito'),
    path('pedidos/', PedidoView.as_view(), name='pedidos'),
+   path('pedidos/<int:pk>/delete/', PedidoEliminarView.as_view(), name='pedido_eliminar'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

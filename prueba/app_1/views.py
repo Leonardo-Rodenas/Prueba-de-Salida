@@ -5,7 +5,7 @@ from .forms import FormularioContacto
 from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from .models import Producto, Pedido
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DeleteView
 
 # Create your views here.
 
@@ -67,4 +67,7 @@ class PedidoView(TemplateView):
     pedidos = Pedido.objects.all()
     return render(request, self.template_name, { 'pedidos': pedidos })
 
-    
+class PedidoEliminarView(DeleteView):
+  model = Pedido
+  template_name = 'pedido_eliminar.html'
+  success_url = reverse_lazy('pedidos')
