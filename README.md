@@ -6,6 +6,8 @@
 
 - La presente entrega maneja variables de entorno para ocultar la información comprometedora del servidor de bases de datos, sin embargo para facilitar su futura revisión entrego por este medio los datos del servidor, por favor colocar estos datos en el archivo .env_default y renombrarlo a .env (sin "_default") para poder hacer funcionar el proyecto:
 
+- Hago entrega también en el presente repositorio de un respaldo de la base de datos
+
 ```
 SECRET_KEY = 'django-insecure-=2ftp8c--pn&f0o2v-^_o7p@=ugv8x-)0o7hd_9ov+c6c-d7pd'
 

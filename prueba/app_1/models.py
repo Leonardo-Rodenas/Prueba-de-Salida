@@ -124,3 +124,4 @@ class DetallePedido(models.Model):
 
     def __str__(self):
         return self.str_nombre
+    
