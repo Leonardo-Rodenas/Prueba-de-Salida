@@ -28,6 +28,6 @@ contraseña: super_super
 Usuario común:
 
 usuario: usuario_comun
-contraseña: 132_comun  
+contraseña: 123_comun  
 
 ```
