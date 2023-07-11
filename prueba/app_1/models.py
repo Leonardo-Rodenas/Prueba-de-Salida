@@ -95,14 +95,9 @@ class Pedido(models.Model):
     fecha_pedido = models.DateTimeField(default=timezone.now)
     mediopedido = models.CharField(max_length=15, choices=VIA_CHOICES, default='Web')
     estado = models.CharField(max_length=15, choices=ESTADOS_CHOICES, default='Pendiente')
-    deleted = models.BooleanField(default=False)
     pedido_staff = models.BooleanField(default=False)
     is_modificable = models.BooleanField(default=True)
     precio_total = models.IntegerField(default=0)
-
-    def delete(self, *args, **kwargs):
-        self.deleted = True
-        self.save()
 
     @property
     def str_nombre(self):
