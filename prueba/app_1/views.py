@@ -4,7 +4,8 @@ from django.conf import settings
 from .forms import FormularioContacto
 from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
-from .models import Producto
+from .models import Producto, Pedido
+from django.views.generic import TemplateView
 
 # Create your views here.
 
@@ -59,8 +60,11 @@ class VistaLoginCustom(LoginView):
     def get_success_url(self):
         return reverse_lazy('perfil') # Lugar al que se es redirecionado si el login es exitoso
 
+class PedidoView(TemplateView):
+  template_name = 'pedidos.html'
 
-
-    
+  def get(self, request):
+    pedidos = Pedido.objects.all()
+    return render(request, self.template_name, { 'pedidos': pedidos })
 
     
