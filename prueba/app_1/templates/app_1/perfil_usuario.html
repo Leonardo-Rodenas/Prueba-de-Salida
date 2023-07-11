@@ -1,0 +1,33 @@
+{% extends "base.html"%}
+{% load static %}
+
+{% block titulo %} Prueba de Salida - Contacto {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <img class="card-img img-fluid mt-5" src="{% static 'assets/img/celebracion_izq.png' %}" alt="img_celeb_izquierda">
+        </div>
+        <div class="col-sm-6">
+            <!-- Columna central -->
+            <div class="d-flex justify-content-center align-items-center mt-5">
+                <div class="card m-3">
+                    <div class="card-body m-3">
+                        <h5 class="card-title text-center fw-bold fs-1">¡¡¡ Bienvenid@ !!!</h5>
+                        <p class="card-text text-center fs-2 text-success">{{ request.user }}</p>
+                    </div>
+                    <div class="d-grid">
+                        <a class="btn btn-success m-3" href="{% url 'tienda' %}">Ver Tienda</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <img class="card-img img-fluid mt-5" src="{% static 'assets/img/celebracion_der.png' %}" alt="img_celeb_derecha">
+        </div>
+    </div>
+</div>
+
+{% endblock %}

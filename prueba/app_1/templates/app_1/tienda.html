@@ -1,0 +1,84 @@
+{% extends "base.html"%}
+
+{% load static %}
+
+{% block titulo %} Prueba de Salida - Tienda {% endblock %}
+
+{% block content %}
+
+<!-- Inicio Catalogo Productos -->
+<div class="container py-5">
+    <div class="row">
+
+        <!-- Inicio Barra vertical Izquierda -->
+        <div class="col-lg-3">
+            <h1 class="h2 pb-4 text-success">Categorias</h1>
+            <ul class="list-unstyled templatemo-accordion">
+                <li class="pb-3">
+                    <a class="d-flex justify-content-between h4 text-decoration-none" href="#">
+                        Videojuegos</a>
+                </li>
+                <li class="pb-3">
+                    <a class="d-flex justify-content-between h4 text-decoration-none" href="#">
+                        Juegos de Mesa</a>
+                </li>
+                <li class="pb-3">
+                    <a class="d-flex justify-content-between h4 text-decoration-none" href="#">
+                        Juguetes</a>
+                </li>
+                <li class="pb-3">
+                    <a class="d-flex justify-content-between h4 text-decoration-none" href="#">
+                        Ofertas</a>
+                </li>
+                <li class="pb-3">
+                    <a class="d-flex justify-content-between h4 text-decoration-none" href="#">
+                        Productos</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Fin Barra vertical Izquierda -->
+  
+        <div class="col-lg-9">
+            <!-- Inicio Encabezado Productos -->
+            <div class="row">
+                <div class="col-md-6">
+               "Lorem Ipsum is simply dummy text" 
+                </div>
+                <div class="col-md-6 pb-4">
+                    <div class="d-flex">
+                        <select class="form-control">
+                            <option>Destacados</option>
+                            <option>de la A a la Z</option>
+                            <option>de la Z a la A</option>
+                            <option> > Precio </option>
+                            <option> < Precio </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin Encabezado Productos -->
+            
+            <!-- Inicio Cuadros de Productos -->
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="{% url 'producto' %}">
+                        <div class="card mb-4 product-wap rounded-5">
+                            <div class="card border-bottom-5 rounded-3">
+                                <img class="card-img border rounded-3 img-fluid" src="{% static 'assets/img/juego1.jpg' %}">
+                            </div>
+                            <div class="card-body text-center">
+                                <a href="#" class="h3 text-decoration-none text-center">Nombre del Juego</a>
+                                <a href="#" class="h3 text-decoration-none text-center">Plataforma</a>
+                                <h3 class="text-center my-3"> $ 70.000</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Fin Cuadros de Productos -->
+        </div>
+    </div>
+</div>
+<!-- Fin Catalogo Productos -->
+
+{% endblock %}

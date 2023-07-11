@@ -1,0 +1,54 @@
+{% extends "base.html"%}
+{% load static %}
+
+{% block titulo %} Prueba de Salida - Regístro {% endblock %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card bg-success">
+        <div class="card-body">
+          <p class="h4 fs-2 card-title text-center text-white">Registro de Usuarios Mis Notapps</p>
+          <hr class="bg-dark">
+          <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <label class="text-white mt-3" for="first_name">Nombre:</label>
+              <input type="text" class="form-control" id="first_name" placeholder="Ingrese nombre" name="first_name"
+                required>
+            </div>
+            <div class="form-group">
+              <label class="text-white mt-3" for="last_name">Apellido:</label>
+              <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Ingrese apellido"
+                required>
+            </div>
+            <div class="form-group">
+              <label class="text-white mt-3" for="username">Nombre de usuario:</label>
+              <input type="text" class="form-control" id="username" placeholder="Ingrese nombre de usuario"
+                name="username" required>
+            </div>
+            <div class="form-group">
+              <label class="text-white mt-3" for="password">Contraseña:</label>
+              <input type="password" class="form-control" id="password" placeholder="Ingrese password" name="password"
+                required>
+            </div>
+            <div class="form-group">
+              <label class="text-white mt-3" for="email">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="email@ejemplo.com" name="email" required>
+            </div>
+            <div class="text-center">
+              <input type="submit" class="btn btn-dark my-4" value="Registrar">
+            </div>
+          </form>
+          {% if error %}
+          <div class="alert alert-danger" role="alert">
+            <p>{{ error }}</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

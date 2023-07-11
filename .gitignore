@@ -1,0 +1,13 @@
+.prueba_final/
+.env
+
+# Archivos de cache de Django
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.pyz
+*.pyzw
+*.pyc
+*.pyc
